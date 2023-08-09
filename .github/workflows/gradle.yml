@@ -38,8 +38,16 @@ jobs:
       run: ./gradlew bootJar
 
           # Jar 파일 Copy
-    - name: Copy Jar
-      run: ls ./build
+    - name: Check Jar File
+      run: ls ./build/libs/
     
-      
+    - name: Move to Sever Jar
+      uses: appleboy/scp-action@v0.1.4
+      with:
+        host: ${{ secrets.FTP_HOST }}
+        username: ${{ secrets.FTP_NAME }}
+        password: ${{ secrets.FTP_PWD }}
+        port: ${{ secrets.FTP_PORT }}
+        source: "./build/libs/*.jar"
+        target: '/home/black9769/be'
         
