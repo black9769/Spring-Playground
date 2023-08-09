@@ -32,7 +32,11 @@ jobs:
       uses: gradle/gradle-build-action@bd5760595778326ba7f1441bcf7e88b49de61a25 # v2.6.0
       with:
         run: ./gradlew clean build
-    
+        
+        ## gradle build
+    - name: Build with Gradle
+      run: ./gradlew bootJar
+
           # Jar 파일 Copy
     - name: Copy Jar
       run: cd /home/runner/
