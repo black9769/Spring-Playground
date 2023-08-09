@@ -39,7 +39,7 @@ jobs:
 
           # Jar 파일 Copy
     - name: Copy Jar
-      run: cd /home/runner/
+      run: cd ./build
     
     - name: check
       run: ls -al
