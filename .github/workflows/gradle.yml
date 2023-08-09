@@ -40,7 +40,7 @@ jobs:
         username: ${{ secrets.FTP_NAME }}
         password: ${{ secrets.FTP_PWD }}
         port: ${{ secrets.FTP_PORT }}
-        source: "./build/libs/playground-0.0.1-SNAPSHOT.jar"
+        source: "playground-0.0.1-SNAPSHOT.jar"
         target: '/home/black9769/be'
         
     - name: Deploy Confirm
