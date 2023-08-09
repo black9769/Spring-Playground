@@ -25,32 +25,22 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
         
-    - name: Add permission
+    - name: Grant execute permission for gradlew
       run: chmod +x gradlew
       
     - name: Build with Gradle
       uses: gradle/gradle-build-action@bd5760595778326ba7f1441bcf7e88b49de61a25 # v2.6.0
       with:
-        run : ./gradlew clean build --exclude-task test
-        
-    - name: Deploy BUILD
-      uses: appleboy/scp-action@v0.1.4
-      with:
-        host: ${{ secrets.FTP_HOST }}
-        username: ${{ secrets.FTP_NAME }}
-        password: ${{ secrets.FTP_PWD }}
-        port: ${{ secrets.FTP_PORT }}
-        source: "./build/libs/*.jar"
-        target: '/home/black9769/be'
-        
-    - name: Deploy Confirm
-      uses: appleboy/ssh-action@v1.0.0
-      with:
-        host: ${{ secrets.FTP_HOST }}
-        username: ${{ secrets.FTP_NAME }}
-        password: ${{ secrets.FTP_PWD }}
-        port: ${{ secrets.FTP_PORT }}
-        script: |
-         cd /home/black9769/be
-         echo -e "`ls -al`\n"
+        run: ./gradlew clean build
+    
+      # 전송할 파일을 담을 디렉토리 생성
+    - name: Make Directory for deliver
+      run: mkdir deploy
+          # Jar 파일 Copy
+    - name: Copy Jar
+      run: cp ./build/libs/*.jar ./deploy/
+    
+    - name: check
+      run: "./deploy"
+      
         
