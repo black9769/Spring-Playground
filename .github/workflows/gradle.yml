@@ -25,6 +25,10 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
         
+    - run: touch ./src/main/resources/application-secret.properties
+    - run: echo "${{ secrets.APPLICATION_SECRET }}" > ./src/main/resources/application-secret.properties
+    - run: cat ./src/main/resources/application-secret.properties
+        
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
       
@@ -51,3 +55,14 @@ jobs:
         source: "./build/libs/*.jar"
         target: '/home/black9769/be'
         
+    - name: Deploy Confirm
+      uses: appleboy/ssh-action@v1.0.0
+      with:
+        host: ${{ secrets.FTP_HOST }}
+        username: ${{ secrets.FTP_NAME }}
+        password: ${{ secrets.FTP_PWD }}
+        port: ${{ secrets.FTP_PORT }}
+        script: |
+           cd /home/black9769/be
+           ls -al
+           ./start.sh
