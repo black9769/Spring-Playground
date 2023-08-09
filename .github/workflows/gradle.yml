@@ -35,7 +35,7 @@ jobs:
     
           # Jar 파일 Copy
     - name: Copy Jar
-      run: cd ./build/libs/
+      run: cd /home/runner/
     
     - name: check
       run: ls -al
