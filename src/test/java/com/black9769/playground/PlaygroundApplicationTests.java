@@ -17,7 +17,7 @@ class PlaygroundApplicationTests {
 class JasyptTest extends JasyptConfig {
     @Test
     public void jasypt_encyrpt_and_decrypt_test(){
-        String text = "jdbc:mariadb://192.168.35.29:3306";
+        String text = "jdbc:mariadb://192.168.35.29:3306/PLAY_GROUND";
         StandardPBEStringEncryptor jasypt = new StandardPBEStringEncryptor();
         jasypt.setPassword("qkrwjdwns!23");
 
