@@ -25,7 +25,7 @@ public class testController {
     @GetMapping("api/test")
     public String test() {
         List<User> userList = userRepository.findAll();
-        return userList.get(0).getName();
+        return "백앤드 자동배포 테스트중";
     }
 
 
