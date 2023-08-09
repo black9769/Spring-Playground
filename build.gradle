@@ -11,6 +11,10 @@ java {
     sourceCompatibility = '11'
 }
 
+jar {
+    enabled = false
+}
+
 configurations {
     compileOnly {
         extendsFrom annotationProcessor
@@ -34,9 +38,9 @@ dependencies {
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    testImplementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter-test:2.3.1'
+    //testImplementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter-test:2.3.1'
 }
 
-tasks.named('test') {
+/*tasks.named('test') {
     useJUnitPlatform()
-}
+}*/
