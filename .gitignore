@@ -39,4 +39,7 @@ out/
 src/main/resources/application-local.properties
 src/main/resources/application-secret.properties
 
+#JasyptConfig
+src/test/java/com/black9769/playground/JasyptTests.java
+
 start.sh
