@@ -13,9 +13,9 @@ import java.util.Optional;
 
 @RestController
 public class testController {
-    private UserService userService;
+    private final UserService userService;
 
-    private UserRepository userRepository;
+    private final UserRepository userRepository;
 
     @Autowired
     public testController(UserService userService, UserRepository userRepository){
@@ -25,9 +25,8 @@ public class testController {
     @GetMapping("api/test")
     public String test() {
         List<User> userList = userRepository.findAll();
-        return "백앤드 자동배포 테스트중";
+        return userList.get(0).getName();
     }
-
 
     @GetMapping("api/jpa")
     public Iterable<User> list(){
@@ -38,6 +37,4 @@ public class testController {
     public String test2() {
         return "test 중입니다 22";
     }
-
-
 }
