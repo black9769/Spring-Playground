@@ -1,4 +1,4 @@
-package com.black9769.playground.global.common.entity;
+package com.black9769.playground.user.entity;
 
 import lombok.Getter;
 import lombok.Setter;

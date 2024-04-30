@@ -1,7 +1,7 @@
-package com.black9769.playground.global.common.service;
+package com.black9769.playground.user.service;
 
-import com.black9769.playground.global.common.entity.User;
-import com.black9769.playground.global.common.repo.UserRepository;
+import com.black9769.playground.user.entity.User;
+import com.black9769.playground.user.repo.UserRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;

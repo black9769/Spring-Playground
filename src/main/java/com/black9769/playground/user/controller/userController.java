@@ -1,24 +1,22 @@
-package com.black9769.playground.global.common.controller;
+package com.black9769.playground.user.controller;
 
-import com.black9769.playground.global.common.entity.User;
-import com.black9769.playground.global.common.repo.UserRepository;
-import com.black9769.playground.global.common.service.UserService;
+import com.black9769.playground.user.entity.User;
+import com.black9769.playground.user.repo.UserRepository;
+import com.black9769.playground.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
-public class testController {
+public class userController {
     private final UserService userService;
 
     private final UserRepository userRepository;
 
     @Autowired
-    public testController(UserService userService, UserRepository userRepository){
+    public userController(UserService userService, UserRepository userRepository){
         this.userService = userService;
         this.userRepository = userRepository;
     }

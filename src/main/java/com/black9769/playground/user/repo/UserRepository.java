@@ -1,11 +1,9 @@
-package com.black9769.playground.global.common.repo;
+package com.black9769.playground.user.repo;
 
-import com.black9769.playground.global.common.entity.User;
-import org.hibernate.metamodel.model.convert.internal.JpaAttributeConverterImpl;
+import com.black9769.playground.user.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import java.util.List;
 import java.util.Optional;
 
 @Repository
