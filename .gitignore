@@ -43,3 +43,5 @@ src/main/resources/application-secret.properties
 src/test/java/com/black9769/playground/JasyptTests.java
 
 start.sh
+/log/
+/http/
